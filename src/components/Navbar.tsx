@@ -48,41 +48,34 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Official Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 p-1 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
+            <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 p-1 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/logo.png"
                 alt="Company Solutions Logo"
-                width={56}
-                height={56}
+                width={48}
+                height={48}
                 className="w-full h-full object-contain"
                 priority
               />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-bold tracking-tight text-slate-900">
+                <span className="text-lg sm:text-xl font-bold tracking-tight text-slate-900">
                   COMPANY<span className="text-blue-600">SOLUTIONS</span>
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
                   INDIA
                 </span>
               </div>
-              <p className="text-[11px] font-medium text-slate-500 tracking-wide">
+              <p className="hidden xl:block text-[11px] font-medium text-slate-500 tracking-wide">
                 Corporate Registration & Secretarial Advisory
               </p>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link
-              href="/"
-              className="text-sm font-semibold text-blue-600 transition-colors"
-            >
-              Home
-            </Link>
-
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {/* Services Dropdown */}
             <div className="relative group">
               <Link
@@ -155,31 +148,24 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="#incorporation"
+              href="/#incorporation"
               className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
             >
               Entity Types
             </Link>
 
             <Link
-              href="#process"
+              href="/#process"
               className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
             >
               Process
             </Link>
 
             <Link
-              href="#documents"
+              href="/#documents"
               className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
             >
-              Documents Required
-            </Link>
-
-            <Link
-              href="#faqs"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              FAQs
+              Checklist
             </Link>
 
             <Link
@@ -191,21 +177,21 @@ export default function Navbar() {
           </nav>
 
           {/* Action CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
             <a
               href="https://wa.me/917340743407?text=Hi%20Company%20Solutions,%20I%20want%20to%20register%20my%20company"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs xl:text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all"
             >
-              <span>WhatsApp Us</span>
+              <span>WhatsApp</span>
             </a>
 
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all"
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs xl:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all"
             >
-              <span>Request Custom Quote</span>
+              <span>Request Quote</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
