@@ -17,6 +17,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://companysolutions.in/sitemap.xml",
+    sitemap: "https://www.companysolutions.in/sitemap.xml",
   };
 }

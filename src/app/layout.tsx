@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Company Solutions", url: "https://companysolutions.in" }],
   creator: "Company Solutions",
   publisher: "Company Solutions",
-  metadataBase: new URL("https://companysolutions.in"),
+  metadataBase: new URL("https://www.companysolutions.in"),
   alternates: {
     canonical: "/",
   },

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { blogPosts } from "@/data/blogPosts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://companysolutions.in";
+  const baseUrl = "https://www.companysolutions.in";
   const currentDate = new Date().toISOString();
 
   // Core High-Priority Pages
