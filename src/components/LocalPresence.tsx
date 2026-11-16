@@ -1,13 +1,38 @@
-import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { MapPin, Phone, Mail, Clock, ExternalLink, ArrowRight } from "lucide-react";
 
 export default function LocalPresence() {
   const localHubs = [
-    { city: "Chandigarh", info: "Sector 17, 34, 35, Industrial Area Phase 1 & 2" },
-    { city: "Mohali (SAS Nagar)", info: "Phase 7, 8, 8B, CP67, Bestech Business Towers" },
-    { city: "Zirakpur", info: "VIP Road, Chandigarh-Ambala Highway, PR7 Airport Road" },
-    { city: "Panchkula", info: "Sector 5, 8, 20, MDC Sector 4 & Industrial Area" },
-    { city: "Kharar & New Chandigarh", info: "Kharar Main, Sunny Enclave, Eco City" },
-    { city: "Pan-India Services", info: "Delhi NCR, Mumbai, Bengaluru, Hyderabad & All States" },
+    {
+      city: "Chandigarh",
+      info: "Sector 17, 34, 35, Industrial Area Phase 1 & 2 & IT Park",
+      href: "/company-registration-chandigarh",
+    },
+    {
+      city: "Mohali (SAS Nagar)",
+      info: "Phase 7, 8, 8B, CP67, Bestech Towers & Aerocity",
+      href: "/company-registration-mohali",
+    },
+    {
+      city: "Zirakpur",
+      info: "VIP Road, Savitry Tower, PR7 Airport Road & Dhakoli",
+      href: "/company-registration-zirakpur",
+    },
+    {
+      city: "Panchkula",
+      info: "Sector 5, 8, 20, MDC Sector 4 & Industrial Area",
+      href: "/services/company-registration",
+    },
+    {
+      city: "Kharar & New Chandigarh",
+      info: "Kharar Main, Sunny Enclave, Eco City & Medicity",
+      href: "/services/company-registration",
+    },
+    {
+      city: "Pan-India Services",
+      info: "Delhi NCR, Mumbai, Bengaluru, Hyderabad & All States",
+      href: "/services",
+    },
   ];
 
   return (
@@ -76,18 +101,25 @@ export default function LocalPresence() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {localHubs.map((hub, index) => (
-                <div
+                <Link
                   key={index}
-                  className="bg-slate-800/80 p-4 rounded-xl border border-slate-700/70 hover:border-blue-500/50 transition-colors"
+                  href={hub.href}
+                  className="group bg-slate-800/80 p-4 rounded-xl border border-slate-700/70 hover:border-blue-400 hover:bg-slate-800 transition-all flex flex-col justify-between"
                 >
-                  <div className="text-sm font-bold text-blue-400 flex items-center justify-between">
-                    <span>{hub.city}</span>
-                    <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                  <div>
+                    <div className="text-sm font-bold text-blue-400 group-hover:text-blue-300 flex items-center justify-between">
+                      <span>{hub.city}</span>
+                      <MapPin className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1">
+                      {hub.info}
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-400 mt-1">
-                    {hub.info}
-                  </p>
-                </div>
+                  <div className="mt-3 pt-2 border-t border-slate-700/40 flex items-center gap-1 text-[11px] font-semibold text-blue-400 group-hover:text-white transition-colors">
+                    <span>Explore Local Advisory</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
               ))}
             </div>
 

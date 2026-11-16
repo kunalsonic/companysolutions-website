@@ -198,18 +198,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-white transition-colors">
-                  Registration in Chandigarh
+                <Link href="/company-registration-chandigarh" className="hover:text-white transition-colors text-blue-400 font-medium">
+                  Company Registration Chandigarh
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-white transition-colors">
-                  Registration in Mohali
+                <Link href="/company-registration-mohali" className="hover:text-white transition-colors text-blue-400 font-medium">
+                  Company Registration Mohali
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-white transition-colors">
-                  Registration in Zirakpur & Panchkula
+                <Link href="/company-registration-zirakpur" className="hover:text-white transition-colors text-blue-400 font-medium">
+                  Company Registration Zirakpur
                 </Link>
               </li>
               <li>
