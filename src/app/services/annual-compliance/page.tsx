@@ -243,6 +243,48 @@ export default function AnnualCompliancePage() {
         </div>
       </section>
 
+      {/* Educational Guide Section (Hub & Spoke Internal Linking) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-600">Compliance Advisory</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                Annual ROC Filings & Due Date Checklist
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="text-xs font-bold text-amber-700 hover:text-amber-900 flex items-center gap-1 transition-colors shrink-0"
+            >
+              <span>Explore all compliance guides</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <Link
+            href="/blog/annual-compliance-checklist-pvt-ltd"
+            className="p-6 sm:p-8 rounded-3xl border border-slate-200/90 hover:border-amber-400 hover:shadow-lg transition-all group bg-slate-50/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          >
+            <div className="space-y-2">
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-100/80 px-2.5 py-0.5 rounded-full border border-amber-200 uppercase tracking-wider">
+                Penalty Prevention Guide
+              </span>
+              <h3 className="font-bold text-slate-900 text-lg group-hover:text-amber-700 transition-colors">
+                Mandatory Annual ROC Compliances for Private Limited Companies
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                Avoid ₹100/day MCA fines. Review the essential calendar of filings including Form AOC-4, MGT-7, and Director DIR-3 KYC verification.
+              </p>
+            </div>
+            <span className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-600 text-white text-xs font-bold group-hover:bg-amber-700 transition-colors shadow-sm">
+              <span>Read Full Checklist</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* FAQs Section */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,7 +316,7 @@ export default function AnnualCompliancePage() {
             <div className="space-y-1">
               <h3 className="text-xl font-bold">Unsure About Your Pending MCA Compliances?</h3>
               <p className="text-xs text-amber-200">
-                Our legal team will check your company status on the MCA Master Data portal for free.
+                Our corporate team will check your company status on the MCA Master Data portal for free.
               </p>
             </div>
             <a

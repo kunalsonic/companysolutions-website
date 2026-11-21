@@ -160,6 +160,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               ))}
 
+              {/* Hub & Spoke Service Conversion Card */}
+              {post.serviceTarget && (
+                <div className="my-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-blue-50/90 via-indigo-50/40 to-slate-50 border border-blue-200/90 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/90 px-2.5 py-0.5 rounded-full border border-blue-200">
+                        {post.serviceTarget.badge}
+                      </span>
+                      <span className="text-xs text-slate-500 font-medium">100% Online MCA Filing</span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+                      {post.serviceTarget.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed">
+                      {post.serviceTarget.description}
+                    </p>
+                  </div>
+                  <Link
+                    href={post.serviceTarget.href}
+                    className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/20 hover:shadow-lg transition-all"
+                  >
+                    <span>{post.serviceTarget.ctaText}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              )}
+
               {/* Author Bio Box */}
               <div className="mt-12 bg-slate-50 rounded-2xl p-6 border border-slate-200 flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-sm shrink-0">
@@ -169,11 +196,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <div className="flex items-center gap-2">
                     <h4 className="font-bold text-slate-900 text-sm">{post.author.name}</h4>
                     <span className="text-[10px] uppercase font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                      Verified Legal Counsel
+                      Certified Corporate Advisor
                     </span>
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Corporate secretarial and legal compliance team at Company Solutions. Specializing in company incorporation, statutory ROC filings, LLP drafting, and trademark enforcement across India.
+                    Corporate secretarial and compliance advisory team at Company Solutions. Specializing in company incorporation, statutory ROC filings, LLP drafting, and trademark protection across India.
                   </p>
                 </div>
               </div>
@@ -206,6 +233,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Sidebar Lead Capture Widget (Right Column) */}
             <div className="lg:col-span-4">
               <div className="sticky top-28 space-y-6">
+                {post.serviceTarget && (
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50/50 p-6 rounded-3xl border border-blue-200/90 space-y-3">
+                    <span className="text-[10px] uppercase font-bold text-blue-700 tracking-wider">
+                      Official Service
+                    </span>
+                    <h4 className="font-bold text-sm text-slate-900 leading-snug">
+                      {post.serviceTarget.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Handled 100% online by certified Company Secretaries & corporate advisors.
+                    </p>
+                    <Link
+                      href={post.serviceTarget.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                    >
+                      <span>Explore Service Page</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                )}
+
                 <ServiceConsultForm
                   serviceName={`Inquiry from: ${post.title}`}
                   badgeText="Talk with Company Secretary"
@@ -216,13 +264,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 space-y-3">
                   <h4 className="font-bold text-sm text-white">Need Immediate Help?</h4>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    Our corporate advisory office is located in Zirakpur (Mohali). You can call or chat on WhatsApp directly with our senior legal counsel.
+                    Our corporate advisory office is located in Zirakpur (Mohali). You can call or chat on WhatsApp directly with our senior corporate advisor.
                   </p>
                   <a
                     href="tel:+917340743407"
                     className="block text-center py-2.5 px-4 rounded-xl bg-white text-slate-900 font-bold text-xs hover:bg-slate-100 transition-colors"
                   >
-                    Call: +91 73407 43407
+                    Call Advisor: +91 73407 43407
                   </a>
                 </div>
               </div>

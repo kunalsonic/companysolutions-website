@@ -244,6 +244,48 @@ export default function LlpRegistrationPage() {
         </div>
       </section>
 
+      {/* Educational Guide Section (Hub & Spoke Internal Linking) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">Comparison Guide</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                LLP vs Private Limited Decision Guide
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1 transition-colors shrink-0"
+            >
+              <span>Explore all articles</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <Link
+            href="/blog/llp-vs-private-limited-comparison"
+            className="p-6 sm:p-8 rounded-3xl border border-slate-200/90 hover:border-emerald-400 hover:shadow-lg transition-all group bg-slate-50/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+          >
+            <div className="space-y-2">
+              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full border border-emerald-200 uppercase tracking-wider">
+                In-Depth Analysis
+              </span>
+              <h3 className="font-bold text-slate-900 text-lg group-hover:text-emerald-700 transition-colors">
+                LLP vs Private Limited Company: Which is Best for Your Business in India?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                A deep dive into tax differences, statutory audit exemptions up to ₹40L, compliance expenses, and fundraising potential.
+              </p>
+            </div>
+            <span className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold group-hover:bg-emerald-700 transition-colors shadow-sm">
+              <span>Read Full Comparison</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* FAQs Section */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

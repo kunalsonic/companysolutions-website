@@ -10,6 +10,13 @@ export interface BlogPost {
     role: string;
   };
   keywords: string[];
+  serviceTarget?: {
+    title: string;
+    description: string;
+    href: string;
+    badge: string;
+    ctaText: string;
+  };
   content: {
     heading: string;
     body: string;
@@ -34,6 +41,14 @@ export const blogPosts: BlogPost[] = [
       "spice+ mca process",
       "company formation documents india",
     ],
+    serviceTarget: {
+      title: "Private Limited Company Registration Service",
+      description:
+        "Get end-to-end incorporation handled by certified Company Secretaries. Includes DSC, DIN, MOA/AOA drafting, SPICe+ MCA filing, PAN, TAN & zero-balance bank account in 7–10 days.",
+      href: "/services/company-registration",
+      badge: "100% Online Incorporation",
+      ctaText: "View Registration Package & Get Quote",
+    },
     content: [
       {
         heading: "1. Why Register a Private Limited Company?",
@@ -62,7 +77,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     publishedAt: "2026-11-05",
     author: {
-      name: "Company Solutions Legal Desk",
+      name: "Company Solutions Advisory Desk",
       role: "Regional Corporate Advisory",
     },
     keywords: [
@@ -70,6 +85,14 @@ export const blogPosts: BlogPost[] = [
       "pvt ltd registration mohali",
       "roc punjab registration zirakpur",
     ],
+    serviceTarget: {
+      title: "Company Registration in Chandigarh, Mohali & Zirakpur",
+      description:
+        "Headquartered on VIP Road, Zirakpur. Meet our corporate advisors directly for local ROC Punjab & Chandigarh filings, stamp duty guidance, and same-day DSC processing.",
+      href: "/services/company-registration",
+      badge: "Regional Tricity Office",
+      ctaText: "Consult Our Mohali Advisory Team",
+    },
     content: [
       {
         heading: "1. The Thriving Startup Ecosystem in Chandigarh Tricity",
@@ -106,6 +129,14 @@ export const blogPosts: BlogPost[] = [
       "difference between llp and pvt ltd",
       "best business structure india",
     ],
+    serviceTarget: {
+      title: "LLP (Limited Liability Partnership) Registration Service",
+      description:
+        "Low annual compliance, zero mandatory audit up to ₹40L turnover, and tax-free profit distributions. Let our CS team draft your partnership deed and file FiLLiP with the MCA.",
+      href: "/services/llp-registration",
+      badge: "Low Compliance Entity",
+      ctaText: "View LLP Registration Package",
+    },
     content: [
       {
         heading: "1. Structure & Ownership Flexibility",
@@ -142,6 +173,14 @@ export const blogPosts: BlogPost[] = [
       "aoc 4 mgt 7 due date",
       "dir 3 kyc penalty",
     ],
+    serviceTarget: {
+      title: "Annual ROC Filing & Secretarial Compliance Service",
+      description:
+        "Prevent ₹100/day MCA fines. End-to-end preparation & filing of Form AOC-4, MGT-7, Director DIR-3 KYC, and statutory registers handled by practicing Company Secretaries.",
+      href: "/services/annual-compliance",
+      badge: "Mandatory Annual Compliance",
+      ctaText: "View Annual ROC Filing Packages",
+    },
     content: [
       {
         heading: "1. The Rising Cost of Non-Compliance",

@@ -373,6 +373,89 @@ export default function CompanyRegistrationPage() {
         </div>
       </section>
 
+      {/* Educational Guides & Articles (Hub & Spoke Internal Linking) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-600">Educational Resources</span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                In-Depth Guides on Company Incorporation
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors shrink-0"
+            >
+              <span>Explore all legal guides</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link
+              href="/blog/private-limited-company-registration-guide"
+              className="p-6 rounded-3xl border border-slate-200/90 hover:border-blue-400 hover:shadow-lg transition-all group bg-slate-50/50 flex flex-col justify-between"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">
+                  Checklist & MCA Process
+                </span>
+                <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">
+                  Complete Guide to Pvt Ltd Company Registration (2026 Checklist)
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                  A step-by-step walkthrough of the SPICe+ MCA filing process, DSC tokens, and name approval rules for new founders.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 mt-4 group-hover:translate-x-1 transition-transform">
+                Read Full Article <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+
+            <Link
+              href="/blog/company-registration-in-chandigarh-mohali"
+              className="p-6 rounded-3xl border border-slate-200/90 hover:border-blue-400 hover:shadow-lg transition-all group bg-slate-50/50 flex flex-col justify-between"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">
+                  Regional Guide
+                </span>
+                <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">
+                  How to Register a Company in Chandigarh, Mohali & Punjab
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                  Local rules, state stamp duty, ROC jurisdiction, and advantages of establishing your corporate entity in the Tricity.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 mt-4 group-hover:translate-x-1 transition-transform">
+                Read Full Article <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+
+            <Link
+              href="/blog/llp-vs-private-limited-comparison"
+              className="p-6 rounded-3xl border border-slate-200/90 hover:border-blue-400 hover:shadow-lg transition-all group bg-slate-50/50 flex flex-col justify-between"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">
+                  Entity Comparison
+                </span>
+                <h3 className="font-bold text-slate-900 text-sm group-hover:text-blue-600 transition-colors">
+                  LLP vs Private Limited Company: Which is Best for You?
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
+                  Compare compliance overhead, mandatory audit exemptions, and tax treatment between LLP and Pvt Ltd structures.
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 mt-4 group-hover:translate-x-1 transition-transform">
+                Read Full Article <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQs Section */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -404,7 +487,7 @@ export default function CompanyRegistrationPage() {
             <div className="space-y-1">
               <h3 className="text-xl font-bold">Ready to Register Your Private Limited Company?</h3>
               <p className="text-xs text-blue-200">
-                Get free company name search and talk with our legal advisory team in Zirakpur / Mohali.
+                Get free company name search and talk with our corporate advisory team in Zirakpur / Mohali.
               </p>
             </div>
             <a
