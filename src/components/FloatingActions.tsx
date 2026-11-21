@@ -20,7 +20,7 @@ export default function FloatingActions() {
 
           {/* Hover Tooltip */}
           <span className="hidden md:block absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
-            Chat with Legal Expert on WhatsApp
+            Chat with Advisor on WhatsApp
           </span>
         </a>
       </aside>

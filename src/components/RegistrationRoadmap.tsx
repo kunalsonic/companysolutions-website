@@ -53,7 +53,7 @@ export default function RegistrationRoadmap() {
             How Company Registration Works in 4 Steps
           </h2>
           <p className="text-base text-slate-400">
-            From initial name search to receiving your Certificate of Incorporation, our legal experts handle 100% of the government compliance.
+            From initial name search to receiving your Certificate of Incorporation, our experienced advisors handle 100% of the government compliance.
           </p>
         </div>
 

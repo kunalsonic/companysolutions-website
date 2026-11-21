@@ -125,7 +125,7 @@ export default function CompanyComparison() {
             href="tel:+917340743407"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-blue-950 font-bold text-sm hover:bg-blue-50 shrink-0 shadow-md transition-all"
           >
-            <span>Call Legal Advisor: +91 73407 43407</span>
+            <span>Call Advisor: +91 73407 43407</span>
             <ArrowRight className="w-4 h-4 text-blue-600" />
           </a>
         </div>

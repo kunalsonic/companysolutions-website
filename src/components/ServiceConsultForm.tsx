@@ -85,7 +85,7 @@ export default function ServiceConsultForm({
         Request Custom Quote & Consultation
       </h2>
       <p className="text-xs text-slate-600 mt-1 mb-5">
-        Speak with our senior legal expert for {serviceName}.
+        Speak with our senior advisor for {serviceName}.
       </p>
 
       {submitted ? (
