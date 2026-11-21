@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Menu, X, ArrowRight, ChevronDown, Building2, FileSpreadsheet, UserCog, Copyright, Sparkles } from "lucide-react";
@@ -8,6 +8,32 @@ import { Phone, Mail, MapPin, Menu, X, ArrowRight, ChevronDown, Building2, FileS
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setServicesDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdown(false);
+    }, 200);
+  };
+
+  const handleDropdownClose = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setServicesDropdown(false);
+  };
 
   const scrollToTop = (e: React.MouseEvent) => {
     if (typeof window !== "undefined" && window.location.pathname === "/") {
@@ -64,7 +90,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Official Brand Logo */}
           <Link href="/" onClick={scrollToTop} className="flex items-center gap-3 group shrink-0">
@@ -94,7 +120,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
             <Link
               href="/"
               onClick={scrollToTop}
@@ -104,22 +130,38 @@ export default function Navbar() {
             </Link>
 
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div
+              className="h-full flex items-center group cursor-pointer"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <Link
                 href="/services"
-                className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-blue-600 py-2 transition-colors"
-                onMouseEnter={() => setServicesDropdown(true)}
+                onClick={handleDropdownClose}
+                className={`flex items-center gap-1 text-sm font-semibold py-2 transition-colors ${
+                  servicesDropdown ? "text-blue-600" : "text-slate-700 hover:text-blue-600"
+                }`}
               >
                 <span>Services</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform" />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    servicesDropdown ? "rotate-180 text-blue-600" : "text-slate-400 group-hover:text-blue-600"
+                  }`}
+                />
               </Link>
 
               {/* 4-Column Mega-Menu Dropdown on Cursor Hover */}
               <div
-                className="absolute top-full -left-64 xl:-left-48 w-[880px] xl:w-[940px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto"
-                onMouseLeave={() => setServicesDropdown(false)}
+                className={`absolute top-full left-4 right-4 sm:left-6 sm:right-6 lg:left-8 lg:right-8 pt-2 z-50 transition-all duration-200 ${
+                  servicesDropdown
+                    ? "opacity-100 visible pointer-events-auto translate-y-0"
+                    : "opacity-0 invisible pointer-events-none -translate-y-1"
+                }`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <div className="grid grid-cols-4 gap-6">
+                <div className="bg-white rounded-3xl shadow-2xl border border-slate-200/90 p-6">
+                  <div className="grid grid-cols-4 gap-6">
                   {/* Col 1: Registration */}
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
@@ -134,6 +176,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/company-registration"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                         >
                           Private Limited Company
@@ -143,6 +186,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/llp-registration"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                         >
                           LLP Registration
@@ -152,6 +196,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                         >
                           One Person Company
@@ -161,6 +206,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                         >
                           Section 8 (NGO Company)
@@ -184,6 +230,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/annual-compliance"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
                         >
                           Annual ROC Filings
@@ -193,6 +240,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/annual-compliance"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
                         >
                           Director e-KYC (DIR-3)
@@ -202,6 +250,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/annual-compliance"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
                         >
                           Commencement of Business
@@ -211,6 +260,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/annual-compliance"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
                         >
                           Secretarial Registers & AGM
@@ -234,6 +284,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
                         >
                           Add or Remove Director
@@ -243,6 +294,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
                         >
                           Registered Office Shift
@@ -252,6 +304,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
                         >
                           Increase Share Capital
@@ -261,6 +314,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
                         >
                           Company Name Change
@@ -284,6 +338,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/services/trademark-registration"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
                         >
                           Trademark (TM-A) Filing
@@ -293,6 +348,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
                         >
                           GST Registration & Returns
@@ -302,6 +358,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
                         >
                           Bookkeeping & Accounting
@@ -311,6 +368,7 @@ export default function Navbar() {
                       <li>
                         <Link
                           href="/#services"
+                          onClick={handleDropdownClose}
                           className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
                         >
                           MSME (Udyam) & IEC
@@ -332,6 +390,7 @@ export default function Navbar() {
                   </div>
                   <Link
                     href="/services"
+                    onClick={handleDropdownClose}
                     className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors"
                   >
                     <span>View All 25+ Services Directory</span>
@@ -340,6 +399,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
+          </div>
 
             <Link
               href="/blog"
