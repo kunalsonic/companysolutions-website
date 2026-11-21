@@ -45,10 +45,10 @@ export async function POST(request: Request) {
       console.error("Local persistence error (non-fatal):", saveError);
     }
 
-    // 2. Dispatch Email Alert if SMTP environment variables are configured
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = Number(process.env.SMTP_PORT) || 587;
-    const smtpUser = process.env.SMTP_USER;
+    // 2. Dispatch Email Alert via Hostinger SMTP
+    const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
+    const smtpPort = Number(process.env.SMTP_PORT) || 465;
+    const smtpUser = process.env.SMTP_USER || "info@companysolutions.in";
     const smtpPass = process.env.SMTP_PASS;
     const toEmail = process.env.ALERT_TO_EMAIL || "info@companysolutions.in";
 
