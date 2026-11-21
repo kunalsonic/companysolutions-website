@@ -75,7 +75,14 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <Link
+              href="/"
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors"
+            >
+              Home
+            </Link>
+
             {/* Services Dropdown */}
             <div className="relative group">
               <Link
