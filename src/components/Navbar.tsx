@@ -148,29 +148,8 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/#incorporation"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              Entity Types
-            </Link>
-
-            <Link
-              href="/#process"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              Process
-            </Link>
-
-            <Link
-              href="/#documents"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              Checklist
-            </Link>
-
-            <Link
               href="/blog"
-              className="text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
+              className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors"
             >
               Blog
             </Link>
@@ -254,27 +233,6 @@ export default function Navbar() {
             className="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50"
           >
             Trademark & Brand Registration
-          </Link>
-          <Link
-            href="#process"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50"
-          >
-            4-Step Process Timeline
-          </Link>
-          <Link
-            href="#documents"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50"
-          >
-            Checklist of Documents
-          </Link>
-          <Link
-            href="#faqs"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-50"
-          >
-            Frequently Asked Questions
           </Link>
           <Link
             href="/blog"
