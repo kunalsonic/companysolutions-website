@@ -66,9 +66,9 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Fast, paperless, and 100% online company registration handled by certified{" "}
-              <strong className="text-white font-semibold">Company Secretaries (CS) & Chartered Accountants</strong>. 
-              Get your Certificate of Incorporation, DSC, DIN, PAN, TAN & Bank Account without visiting any government office.
+              End-to-end online company registration and secretarial compliance managed by{" "}
+              <strong className="text-white font-semibold">experienced professionals</strong>. 
+              From name approval to incorporation, PAN, TAN, and bank account setup—completely hassle-free.
             </p>
 
             {/* Feature Highlights Grid */}
