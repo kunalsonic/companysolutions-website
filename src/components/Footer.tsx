@@ -16,7 +16,7 @@ export default function Footer() {
               Ready to Launch Your Company in India?
             </h3>
             <p className="text-sm text-blue-200">
-              Get free name check, transparent pricing, and complete incorporation support today.
+              Get free name check, custom proposal, and complete incorporation support today.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3">

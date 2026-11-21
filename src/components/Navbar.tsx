@@ -68,7 +68,7 @@ export default function Navbar() {
                   INDIA
                 </span>
               </div>
-              <p className="hidden xl:block text-[11px] font-medium text-slate-500 tracking-wide">
+              <p className="block text-[10px] sm:text-[11px] font-medium text-slate-500 tracking-wide leading-tight">
                 Corporate Registration & Secretarial Advisory
               </p>
             </div>
