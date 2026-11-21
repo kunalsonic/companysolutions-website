@@ -15,7 +15,7 @@ export default function RegistrationRoadmap() {
       step: "02",
       icon: FileText,
       title: "Drafting MOA & AOA",
-      timeline: "Days 3 – 4",
+      timeline: "1 Day",
       description:
         "Our Company Secretaries draft your Memorandum of Association (MOA) and Articles of Association (AOA), including your custom business objects and capital structure.",
       deliverable: "Charter Documents (e-MOA & e-AOA)",
@@ -24,7 +24,7 @@ export default function RegistrationRoadmap() {
       step: "03",
       icon: Send,
       title: "SPICe+ Part B Filing",
-      timeline: "Days 5 – 7",
+      timeline: "1 Day",
       description:
         "Comprehensive filing on MCA V3 portal covering DIN allotment, Certificate of Incorporation, PAN, TAN, EPFO, ESIC, and corporate bank account opening.",
       deliverable: "MCA Government Submission Receipt",
@@ -33,7 +33,7 @@ export default function RegistrationRoadmap() {
       step: "04",
       icon: Award,
       title: "Certificate of Incorporation",
-      timeline: "Days 7 – 10",
+      timeline: "5 – 7 Days",
       description:
         "The Registrar of Companies (ROC) issues your official Certificate of Incorporation with your unique 21-digit CIN, PAN, and TAN cards.",
       deliverable: "Official COI, CIN, PAN & TAN",
