@@ -9,6 +9,25 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const scrollToQuote = (e: React.MouseEvent) => {
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      const quoteEl = document.getElementById("quote-form");
+      if (quoteEl) {
+        e.preventDefault();
+        quoteEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        const firstInput = quoteEl.querySelector("input, select") as HTMLElement | null;
+        if (firstInput) firstInput.focus();
+      }
+    }
+  };
+
   return (
     <header className="w-full bg-white border-b border-slate-100 sticky top-0 z-50">
       {/* Top Bar for Direct Contact & Office Details */}
@@ -48,7 +67,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Official Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" onClick={scrollToTop} className="flex items-center gap-3 group shrink-0">
             <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 p-1 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <Image
                 src="/logo.png"
@@ -78,6 +97,7 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             <Link
               href="/"
+              onClick={scrollToTop}
               className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors"
             >
               Home
@@ -174,7 +194,8 @@ export default function Navbar() {
             </a>
 
             <a
-              href="/#contact"
+              href="/#quote-form"
+              onClick={scrollToQuote}
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs xl:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20 hover:shadow-lg transition-all"
             >
               <span>Request Quote</span>
@@ -201,7 +222,10 @@ export default function Navbar() {
         <div className="lg:hidden border-t border-slate-100 bg-white px-4 pt-4 pb-6 space-y-3 shadow-xl">
           <Link
             href="/"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              scrollToTop(e);
+            }}
             className="block px-3 py-2 rounded-lg text-base font-semibold text-blue-600 bg-blue-50"
           >
             Home

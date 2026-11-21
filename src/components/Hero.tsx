@@ -130,7 +130,7 @@ export default function Hero() {
 
           {/* Right Column: High-Converting Lead Capture Form */}
           <div className="lg:col-span-5">
-            <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative">
+            <div id="quote-form" className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative scroll-mt-28">
               
               {/* Form Header Badge */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold mb-3 border border-emerald-200">
