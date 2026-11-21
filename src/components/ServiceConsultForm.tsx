@@ -95,7 +95,7 @@ export default function ServiceConsultForm({
           </div>
           <h3 className="text-lg font-bold text-slate-900">Consultation Request Received!</h3>
           <p className="text-xs text-slate-600">
-            Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our corporate legal advisor will contact you on <strong className="text-slate-900">{formData.phone}</strong> shortly.
+            Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. Our consultant will contact you on <strong className="text-slate-900">{formData.phone}</strong> shortly.
           </p>
           <a
             href={`https://wa.me/917340743407?text=Hello%20Company%20Solutions,%20I%20just%20submitted%20an%20inquiry%20for%20${encodeURIComponent(serviceName)}.%20Name:%20${encodeURIComponent(formData.fullName)}`}

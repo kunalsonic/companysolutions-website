@@ -152,7 +152,7 @@ export default function Hero() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">Request Received!</h3>
                   <p className="text-sm text-slate-600">
-                    Thank you, <strong className="text-slate-900">{formData.name}</strong>. Our legal consultant will prepare your customized quotation and reach out on <strong className="text-slate-900">{formData.phone}</strong> shortly.
+                    Thank you, <strong className="text-slate-900">{formData.name}</strong>. Our consultant will prepare your customized quotation and reach out on <strong className="text-slate-900">{formData.phone}</strong> shortly.
                   </p>
                   <a
                     href={`https://wa.me/917340743407?text=Hello%20Company%20Solutions,%20I%20just%20submitted%20inquiry%20for%20${encodeURIComponent(formData.service)}.%20Name:%20${encodeURIComponent(formData.name)}`}
