@@ -393,6 +393,7 @@ export default function ServicesGrid() {
                   key={cat.id}
                   type="button"
                   onClick={() => setActiveTab(cat.id as any)}
+                  onMouseEnter={() => setActiveTab(cat.id as any)}
                   className={`flex-1 min-w-[140px] py-3 px-3.5 rounded-xl text-left transition-all flex items-center gap-3 ${
                     isActive
                       ? "bg-white text-slate-900 shadow-md border border-slate-200/80 scale-[1.02]"
@@ -427,7 +428,7 @@ export default function ServicesGrid() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-2xl hover:border-blue-400 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Card Header: Icon + Badge */}

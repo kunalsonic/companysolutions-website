@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, ArrowRight, ChevronDown, Building2, FileSpreadsheet, UserCog, Copyright, Sparkles } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -114,61 +114,228 @@ export default function Navbar() {
                 <ChevronDown className="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform" />
               </Link>
 
+              {/* 4-Column Mega-Menu Dropdown on Cursor Hover */}
               <div
-                className="absolute top-full -left-20 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                className="absolute top-full -left-64 xl:-left-48 w-[880px] xl:w-[940px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none group-hover:pointer-events-auto"
                 onMouseLeave={() => setServicesDropdown(false)}
               >
-                <div className="space-y-1">
-                  <div className="px-3 py-1.5 text-xs font-semibold uppercase text-slate-400 tracking-wider">
-                    Company Formation
+                <div className="grid grid-cols-4 gap-6">
+                  {/* Col 1: Registration */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                      <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                        <Building2 className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-bold uppercase text-slate-900 tracking-wider">
+                        Incorporation
+                      </span>
+                    </div>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/services/company-registration"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        >
+                          Private Limited Company
+                          <span className="block text-[11px] font-normal text-slate-500">Most popular for startups</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/llp-registration"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        >
+                          LLP Registration
+                          <span className="block text-[11px] font-normal text-slate-500">Partnership firms</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        >
+                          One Person Company
+                          <span className="block text-[11px] font-normal text-slate-500">Solo entrepreneurs</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        >
+                          Section 8 (NGO Company)
+                          <span className="block text-[11px] font-normal text-slate-500">Non-profit foundations</span>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
-                  <Link
-                    href="/services/company-registration"
-                    className="block px-3 py-2 rounded-xl text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                  >
-                    Private Limited Registration
-                    <span className="block text-xs font-normal text-slate-500">Most popular for startups & fundraising</span>
-                  </Link>
-                  <Link
-                    href="/services/llp-registration"
-                    className="block px-3 py-2 rounded-xl text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                  >
-                    LLP Registration
-                    <span className="block text-xs font-normal text-slate-500">Best for professional partnerships</span>
-                  </Link>
-                  <Link
-                    href="/#incorporation"
-                    className="block px-3 py-2 rounded-xl text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                  >
-                    One Person Company (OPC)
-                    <span className="block text-xs font-normal text-slate-500">Single founder with limited liability</span>
-                  </Link>
 
-                  <div className="border-t border-slate-100 my-2"></div>
-                  <div className="px-3 py-1.5 text-xs font-semibold uppercase text-slate-400 tracking-wider">
-                    Compliance & Tax
+                  {/* Col 2: Annual ROC */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                      <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                        <FileSpreadsheet className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-bold uppercase text-slate-900 tracking-wider">
+                        Annual ROC & CS
+                      </span>
+                    </div>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/services/annual-compliance"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+                        >
+                          Annual ROC Filings
+                          <span className="block text-[11px] font-normal text-slate-500">Form AOC-4 & MGT-7</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/annual-compliance"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+                        >
+                          Director e-KYC (DIR-3)
+                          <span className="block text-[11px] font-normal text-slate-500">Mandatory annual DIN KYC</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/annual-compliance"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+                        >
+                          Commencement of Business
+                          <span className="block text-[11px] font-normal text-slate-500">INC-20A bank mandate</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/services/annual-compliance"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+                        >
+                          Secretarial Registers & AGM
+                          <span className="block text-[11px] font-normal text-slate-500">Board minutes & resolutions</span>
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
-                  <Link
-                    href="/services/annual-compliance"
-                    className="block px-3 py-2 rounded-xl text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                  >
-                    Annual ROC Filings & Secretarial
-                    <span className="block text-xs font-normal text-slate-500">AOC-4, MGT-7 & Director KYC</span>
-                  </Link>
-                  <Link
-                    href="/services/trademark-registration"
-                    className="block px-3 py-2 rounded-xl text-sm font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                  >
-                    Trademark & IP Registration
-                    <span className="block text-xs font-normal text-slate-500">Brand & logo legal protection</span>
-                  </Link>
 
-                  <div className="border-t border-slate-100 my-2"></div>
+                  {/* Col 3: Company Changes */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                      <div className="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center">
+                        <UserCog className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-bold uppercase text-slate-900 tracking-wider">
+                        Corporate Changes
+                      </span>
+                    </div>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
+                        >
+                          Add or Remove Director
+                          <span className="block text-[11px] font-normal text-slate-500">Form DIR-12 filing</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
+                        >
+                          Registered Office Shift
+                          <span className="block text-[11px] font-normal text-slate-500">Form INC-22 address change</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
+                        >
+                          Increase Share Capital
+                          <span className="block text-[11px] font-normal text-slate-500">Form SH-7 capital expansion</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
+                        >
+                          Company Name Change
+                          <span className="block text-[11px] font-normal text-slate-500">RUN & INC-24 approval</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Col 4: Tax & IP */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                      <div className="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                        <Copyright className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-bold uppercase text-slate-900 tracking-wider">
+                        Tax, IP & Finance
+                      </span>
+                    </div>
+                    <ul className="space-y-1">
+                      <li>
+                        <Link
+                          href="/services/trademark-registration"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
+                        >
+                          Trademark (TM-A) Filing
+                          <span className="block text-[11px] font-normal text-slate-500">Brand & logo protection</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
+                        >
+                          GST Registration & Returns
+                          <span className="block text-[11px] font-normal text-slate-500">Monthly GSTR filings</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
+                        >
+                          Bookkeeping & Accounting
+                          <span className="block text-[11px] font-normal text-slate-500">Tally / Zoho ledger support</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/#services"
+                          className="block px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-800 hover:bg-indigo-50 hover:text-indigo-800 transition-colors"
+                        >
+                          MSME (Udyam) & IEC
+                          <span className="block text-[11px] font-normal text-slate-500">Govt subsidies & import export</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Bottom Bar inside Mega Menu */}
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between bg-slate-50 -mx-6 -mb-6 px-6 py-3.5 rounded-b-3xl">
+                  <div className="flex items-center gap-2 text-xs text-slate-600">
+                    <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                    <span>Need immediate guidance?</span>
+                    <a href="tel:+917340743407" className="font-bold text-blue-600 hover:underline">
+                      Call Advisor: +91 73407 43407
+                    </a>
+                  </div>
                   <Link
                     href="/services"
-                    className="block px-3 py-2.5 rounded-xl text-xs font-bold text-center bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors"
+                    className="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors"
                   >
-                    Explore All 25+ Services Directory &rarr;
+                    <span>View All 25+ Services Directory</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
